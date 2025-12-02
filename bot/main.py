@@ -89,7 +89,7 @@ def _handle_media(update: Update, context: CallbackContext) -> None:
         return
 
     with tmp_path.open("rb") as file_handle:
-        update.message.reply_document(document=file_handle, filename=filename)
+        update.message.reply_document(document=file_handle, filename=filename, timeout=120)
 
     if tmp_path.exists():
         tmp_path.unlink()
